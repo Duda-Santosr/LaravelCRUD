@@ -1,26 +1,20 @@
 <?php
-use App\Http\Controllers\UserController;
+
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 
-// Página inicial
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function() { return view('welcome'); })->name('home');
 
-// Registro
-Route::get('/register', [UserController::class, 'registerPage'])->name('register');
-Route::post('/register', [UserController::class, 'register']);
+Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
+Route::post('/register', [AuthController::class, 'register']);
 
-// Login
-Route::get('/login', [UserController::class, 'loginPage'])->name('login');
-Route::post('/login', [UserController::class, 'login']);
+Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
 
-// Dashboard
-Route::get('/dashboard', [UserController::class, 'dashboard'])->middleware('auth');
+Route::get('/dashboard', [AuthController::class, 'dashboard'])->name('dashboard');
 
-// Editar perfil
-Route::get('/edit', [UserController::class, 'editPage'])->middleware('auth');
-Route::post('/edit', [UserController::class, 'update'])->middleware('auth');
+Route::get('/edit-password', [AuthController::class, 'showEditPassword'])->name('edit.password');
+Route::post('/edit-password', [AuthController::class, 'editPassword']);
 
-// Logout
-Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
+Route::resource('users', UserController::class);

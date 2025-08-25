@@ -2,22 +2,88 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD Laravel</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <!-- Boostrap -->
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-     
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body, html { 
+            height: 100%; 
+            margin: 0; 
+            font-family: 'Segoe UI', sans-serif; 
+        }
+
+        /* Fundo com gradiente roxo/lilás */
+        .bg-wave {
+            background: linear-gradient(135deg, #7B2CBF, #C77DFF, #E0AAFF);
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Estilo do título */
+        .bg-wave h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .bg-wave p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        /* Botões arredondados */
+        .btn-custom {
+            border-radius: 30px;
+            padding: 12px 30px;
+            margin: 10px;
+            border: 2px solid white;
+            color: white;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
+        }
+
+        /* Hover com destaque lilás */
+        .btn-custom:hover { 
+            background-color: white; 
+            color: #7B2CBF; 
+            transform: translateY(-3px);
+        }
+
+        /* Efeito suave no fundo */
+        .bg-wave::before {
+            content: "";
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            z-index: 0;
+            animation: float 6s infinite ease-in-out alternate;
+        }
+
+        @keyframes float {
+            from { transform: translateY(0); }
+            to { transform: translateY(30px); }
+        }
+    </style>
 </head>
-<body class="flex items-center justify-center h-screen bg-gray-100 relative">
-    <div class="absolute inset-0 bg-center bg-cover opacity-20" style="background-image: url('/images/logo.png');"></div>
-    <div class="z-10 bg-white p-8 rounded shadow">
-        <h1 class="text-2xl mb-6 text-center font-bold">Bem-vindo ao CRUD</h1>
-        <div class="flex justify-center gap-4">
-            <a href="/login" class="bg-blue-500 px-4 py-2 text-white rounded">Entrar</a>
-            <a href="/register" class="bg-green-500 px-4 py-2 text-white rounded">Cadastrar</a>
-        </div>
+<body>
+<div class="bg-wave position-relative">
+    <h1>Bem-vinda </h1>
+    <p>Entre ou cadastre-se para começar sua jornada</p>
+    <div>
+        <a href="{{ route('login') }}" class="btn btn-custom">Entrar</a>
+        <a href="{{ route('register') }}" class="btn btn-custom">Cadastrar</a>
     </div>
+</div>
 </body>
 </html>

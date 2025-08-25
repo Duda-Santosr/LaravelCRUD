@@ -23,7 +23,7 @@
             padding: 10px 20px;
             transition: 0.3s;
         }
-        .btn-purple:hover { background-color: #9D4EDD; transform: translateY(-2px); }
+        .btn-purple:hover { background-color: #9D4EDD; transform: translateY(-2px); color:#fff; }
     </style>
 </head>
 <body>

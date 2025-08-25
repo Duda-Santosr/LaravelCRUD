@@ -30,7 +30,7 @@
             transition: 0.3s;
         }
         .btn-purple:hover { background-color: #9D4EDD; transform: translateY(-2px); }
-        a { color: #7B2CBF; text-decoration:none; font-weight: 500; }
+        a { color: #7B2CBF; text-decoration:none; font-weight: 500;  }
     </style>
 </head>
 <body>

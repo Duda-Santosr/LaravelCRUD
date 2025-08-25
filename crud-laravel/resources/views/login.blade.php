@@ -29,7 +29,7 @@
             width: 100%;
             transition: 0.3s;
         }
-        .btn-purple:hover { background-color: #9D4EDD; transform: translateY(-2px); }
+        .btn-purple:hover { background-color: #9D4EDD; transform: translateY(-2px); color:#fff;}
         a { color: #7B2CBF; text-decoration:none; font-weight: 500; }
     </style>
 </head>
